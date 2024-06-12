@@ -4,14 +4,15 @@ import java.io.IOException;
 
 public class gerenciamento {
     public void salvarDoacao(doaçao doacao, String arquivo) {
+        String [] tipos = {"Roupa", "Dinheiro", "Comida"};
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivo, true))) {
             String Tipo = doacao.getTipo();
             if (Tipo.equals("1")) {
-                writer.write("Tipo: Roupa");
+                writer.write("Tipo: "+tipos[0]);
             } else if (Tipo.equals("2")) {
-                writer.write("Tipo: Dinheiro");
+                writer.write("Tipo: "+tipos[1]);
             } else if (Tipo.equals("3")) {
-                writer.write("Tipo: Comida");
+                writer.write("Tipo: "+tipos[2]);
                 
             }
             writer.newLine();
